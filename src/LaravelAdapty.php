@@ -67,7 +67,7 @@ class LaravelAdapty
      *
      * @return AdaptyResponse
      */
-    public function revokeSubscription(string $profileId, $accessLevel = 'premium', $isRefund = false): AdaptyResponse
+    public static function revokeSubscription(string $profileId, string $accessLevel = 'premium', bool $isRefund = false): AdaptyResponse
     {
         $response = static::client()->post(
             "/profiles/$profileId/paid-access-levels/$accessLevel/revoke/",
