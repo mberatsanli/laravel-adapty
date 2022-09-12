@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/mberatsanli/laravel-adapty/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/mberatsanli/laravel-adapty/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/mberatsanli/laravel-adapty.svg?style=flat-square)](https://packagist.org/packages/mberatsanli/laravel-adapty)
 
-A Laravel package for the Adapty PHP SDK. 
+A Laravel package for the Adapty SDK. 
 **Please feel free to contribute...**
 
 ## Installation
