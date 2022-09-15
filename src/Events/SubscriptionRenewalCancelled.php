@@ -2,19 +2,14 @@
 
 namespace MBS\LaravelAdapty\Events;
 
-use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Queue\SerializesModels;
+use MBS\LaravelAdapty\Data\Event\SubscriptionRenewalCancelledEventData;
 
-class SubscriptionRenewalCancelled
+class SubscriptionRenewalCancelled extends AbstractEvent
 {
-    use Dispatchable, SerializesModels;
 
-    /**
-     * @return void
-     */
-    public function __construct(public $event)
+    public function getEventPropertiesAttribute($data)
     {
-        //
+        return SubscriptionRenewalCancelledEventData::fromArray($data);
     }
 
 }

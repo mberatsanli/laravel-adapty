@@ -1,7 +1,9 @@
 <?php
 
-namespace MBS\LaravelAdapty\Data\Webhook;
+namespace MBS\LaravelAdapty\Events;
 
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 use MBS\LaravelAdapty\Traits\HasAttributes;
 
 /**
@@ -12,10 +14,10 @@ use MBS\LaravelAdapty\Traits\HasAttributes;
  * @property-read mixed $event_properties
  * @property-read int $event_api_version
  */
-abstract class AbstractWebhookData
+abstract class AbstractEvent
 {
 
-    use HasAttributes;
+    use Dispatchable, SerializesModels, HasAttributes;
 
     abstract public function getEventPropertiesAttribute($data);
 
