@@ -4,6 +4,9 @@ namespace MBS\LaravelAdapty\Events;
 
 use MBS\LaravelAdapty\Data\Event\SubscriptionExpiredEventData;
 
+/**
+ * @property-read SubscriptionExpiredEventData $event_properties
+ */
 class SubscriptionExpired extends AbstractEvent
 {
 
