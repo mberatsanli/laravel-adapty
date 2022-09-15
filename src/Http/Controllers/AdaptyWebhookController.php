@@ -68,6 +68,10 @@ class AdaptyWebhookController extends BaseController
         }
 
         if ($request->has('event_type')) {
+            if (config('adapty.webhook.reject_if_customer_user_id_is_null') && $request->get('customer_user_id') === null) {
+                throw new \Exception('Customer user id cannot be null!');
+            }
+
             $eventType = $request->get('event_type');
 
             if (!array_key_exists($eventType, $this->eventMap)) {

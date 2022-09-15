@@ -8,7 +8,8 @@ return [
 
     'webhook' => [
         'path' => env('ADAPTY_WEBHOOK_PATH', '/adapty/webhook'),
-        'middleware' => []
+        'middleware' => [],
+        'reject_if_customer_user_id_is_null' => false,
     ],
 
 ];
