@@ -1,6 +1,6 @@
 <?php
 
-namespace MBS\LaravelAdapty\Requests;
+namespace MBS\LaravelAdapty\Http\Requests;
 
 use Carbon\Carbon;
 

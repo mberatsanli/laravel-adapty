@@ -51,7 +51,7 @@ $setAttributesResponse = \MBS\LaravelAdapty\LaravelAdapty::setUserAttributes('<U
 ]);
 
 // see https://docs.adapty.io/docs/getting-started-with-server-side-api#case-2-grant-a-subscription
-$grantRequest = \MBS\LaravelAdapty\Requests\GrantSubscriptionRequest::make(7, ....);
+$grantRequest = \MBS\LaravelAdapty\Http\Requests\GrantSubscriptionRequest::make(7, ....);
 $grantResponse = \MBS\LaravelAdapty\LaravelAdapty::grantSubscription('<USER ID -- OR -- Adapty Profile ID>', $grantRequest);
 
 // See https://docs.adapty.io/docs/server-side-api-specs#revoke-subscription-from-a-user

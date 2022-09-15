@@ -4,7 +4,7 @@ namespace MBS\LaravelAdapty;
 
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
-use MBS\LaravelAdapty\Requests\GrantSubscriptionRequest;
+use MBS\LaravelAdapty\Http\Requests\GrantSubscriptionRequest;
 use MBS\LaravelAdapty\Responses\AdaptyResponse;
 
 class LaravelAdapty
