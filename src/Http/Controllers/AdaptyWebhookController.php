@@ -35,7 +35,7 @@ class AdaptyWebhookController extends BaseController
         }
 
         if ($request->has('event_type')) {
-            Log::info('Adapty Webhook :: Event Type :: ', $request->get('event_type'));
+            Log::info('Adapty Webhook :: Event Type :: ' . $request->get('event_type'));
 
             if (config('adapty.webhook.reject_if_customer_user_id_is_null') && $request->get('customer_user_id') === null) {
                 Log::error('Adapty Webhook :: customer user id is NULL');
@@ -47,7 +47,7 @@ class AdaptyWebhookController extends BaseController
             $eventType = $request->get('event_type');
 
             if (!array_key_exists($eventType, $events)) {
-                Log::error('Adapty Webhook :: undefined adapty event type :: ', $eventType);
+                Log::error('Adapty Webhook :: undefined adapty event type :: ' . $eventType);
 
                 throw new UndefinedAdaptyEventTypeException($eventType);
             }
@@ -55,7 +55,7 @@ class AdaptyWebhookController extends BaseController
             /** @var AbstractEvent $event */
             $event = $events[$eventType];
             event($event::fromArray($request->all()));
-            Log::info('Adapty Webhook :: event dispatched ', $eventType);
+            Log::info('Adapty Webhook :: event dispatched :: ' . $eventType);
 
             return response()->json([]);
         }
