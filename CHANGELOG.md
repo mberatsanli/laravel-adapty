@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.0.5 - 2022-09-17
+
+- "Illuminate\Log\LogManager::info(): Argument #2 ($context) must be of type array, string given." fixed
+
 ## 1.0.4 - 2022-09-17
 
 - phpDoc defined for SubscriptionStartedEventData
