@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.0.4 - 2022-09-17
+
+- phpDoc defined for SubscriptionStartedEventData
+
 ## 1.0.3 - 2022-09-15
 
 - events will take from config
