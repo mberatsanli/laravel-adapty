@@ -18,21 +18,21 @@ class GrantSubscriptionRequest
 
     public string $accessLevel = 'premium';
 
-    protected string|null $startsAt;
+    protected string|null $startsAt = null;
 
-    protected string|null $vendorProductId;
+    protected string|null $vendorProductId = null;
 
-    protected string|null $vendorTransactionId;
+    protected string|null $vendorTransactionId = null;
 
-    protected string|null $store;
+    protected string|null $store = null;
 
-    protected string|null $introductoryOfferType;
+    protected string|null $introductoryOfferType = null;
 
-    protected float|null $price;
+    protected float|null $price = null;
 
-    protected float|null $proceeds;
+    protected float|null $proceeds = null;
 
-    protected string|null $priceLocale;
+    protected string|null $priceLocale = null;
 
     public static function make($durationDays, $accessLevel = 'premium', $expiresAt = null, $isLifetime = false): static
     {
@@ -162,19 +162,45 @@ class GrantSubscriptionRequest
 
     public function toRequestData(): array
     {
-        return [
+        $request = [
             'expires_at' => $this->expiresAt,
             'duration_days' => $this->durationDays,
             'is_lifetime' => $this->isLifetime,
-            'starts_at' => $this->startsAt,
-            'vendor_product_id' => $this->vendorProductId,
-            'vendor_transaction_id' => $this->vendorTransactionId,
-            'store' => $this->store,
-            'introductory_offer_type' => $this->introductoryOfferType,
-            'price' => $this->price,
-            'proceeds' => $this->proceeds,
-            'price_locale' => $this->priceLocale,
         ];
+
+        if (isset($this->startsAt)) {
+            $request['starts_at'] = $this->startsAt;
+        }
+
+        if (isset($this->vendorProductId)) {
+            $request['vendor_product_id'] = $this->vendorProductId;
+        }
+
+        if (isset($this->vendorTransactionId)) {
+            $request['vendor_transaction_id'] = $this->vendorTransactionId;
+        }
+
+        if (isset($this->store)) {
+            $request['store'] = $this->store;
+        }
+
+        if (isset($this->introductoryOfferType)) {
+            $request['introductory_offer_type'] = $this->introductoryOfferType;
+        }
+
+        if (isset($this->price)) {
+            $request['price'] = $this->price;
+        }
+
+        if (isset($this->proceeds)) {
+            $request['proceeds'] = $this->proceeds;
+        }
+
+        if (isset($this->priceLocale)) {
+            $request['price_locale'] = $this->priceLocale;
+        }
+
+        return $request;
     }
 
 }
