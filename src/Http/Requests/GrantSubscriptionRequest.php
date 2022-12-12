@@ -18,21 +18,21 @@ class GrantSubscriptionRequest
 
     public string $accessLevel = 'premium';
 
-    protected string|null $startsAt = null;
+    protected string|null $startsAt;
 
-    protected string|null $vendorProductId = null;
+    protected string|null $vendorProductId;
 
-    protected string|null $vendorTransactionId = null;
+    protected string|null $vendorTransactionId;
 
-    protected string|null $store = null;
+    protected string|null $store;
 
-    protected string|null $introductoryOfferType = null;
+    protected string|null $introductoryOfferType;
 
-    protected float|null $price = null;
+    protected float|null $price;
 
-    protected float|null $proceeds = null;
+    protected float|null $proceeds;
 
-    protected string|null $priceLocale = null;
+    protected string|null $priceLocale;
 
     public static function make($durationDays, $accessLevel = 'premium', $expiresAt = null, $isLifetime = false): static
     {
